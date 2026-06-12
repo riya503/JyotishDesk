@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 class AIService {
   constructor() {
-    this.model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // Use stable 1.5 flash instead of latest
+    this.model = genAI.getGenerativeModel({ model: 'gemini-pro' }); // Most stable model
   }
 
   async generateConsultationSummary(notes) {
