@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: jyotishdesk-backend
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5005
+    # The disk section creates a persistent volume so the SQLite db isn't lost on restart.
+    disk:
+      name: sqlite-data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1

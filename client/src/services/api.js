@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '', // Proxied locally by Vite in dev mode
+  // In production, VITE_API_URL should be set in Vercel. In dev, it falls back to empty string for Vite proxy.
+  baseURL: import.meta.env.VITE_API_URL || '',
   headers: {
     'Content-Type': 'application/json'
   }
